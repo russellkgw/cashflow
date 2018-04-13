@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cashflow</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='bulma.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='package.json') }}">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  </head>
+  <body>
+      {% for message in get_flashed_messages() %}
+        <div class=flash>{{ message }}</div>
+      {% endfor %}
+      {% block body %}{% endblock %}
+  </body>
+</html>

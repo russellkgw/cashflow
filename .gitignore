@@ -99,3 +99,8 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# extra
+ignore/
+.DS_Store
+.idea/

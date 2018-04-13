@@ -1,0 +1,3 @@
+graft cashflow/templates
+graft cashflow/static
+include cashflow/schema.sql

@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block body %}
+<section class="section">
+  <div class="container">
+    <h1 class="title">
+      Cashflow Model Assumptions
+    </h1>
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th>Variable</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for assumption in assumptions %}
+                <tr>
+                    <th>{{ assumption.variable }}</th>
+                    <td>{{ assumption.value }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="2">No assumptions</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+
+      <form action="{{ url_for('upload_data') }}" method='post' class='upload-data'>
+          <dl>
+            <dd><input type='file' name='file'>
+            <dd><input type='submit' value='Upload'>
+          </dl>
+    </form>
+  </div>
+</section>
+{% endblock %}
+
+<!--FLASK_APP=cashflow FLASK_DEBUG=true flask run-->
